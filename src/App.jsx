@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ContextProvider } from "./Components/utils/global.context";
 import Home from "./Routes/Home";
 import Contact from "./Routes/Contact";
@@ -14,12 +14,12 @@ function App() {
       <ContextProvider>
         <Router>
           <Navbar/>
-          <Switch>
+          <Routes>
             <Route exact path="/" component={Home}/>
             <Route path="/contacto" component={Contact}/>
             <Route path="/dentist/:id" component={Detail}/>
             <Route path="/favs" component={Favs}/>
-          </Switch>
+          </Routes>
           <Footer/>
         </Router>
       </ContextProvider>
